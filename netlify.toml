@@ -1,0 +1,28 @@
+[build.environment]
+  NODE_VERSION = "20"
+
+# CORS for all paths — Angular UI fetches from a different origin.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"
+
+# Per-word JSON pages — immutable once generated, cache aggressively.
+[[headers]]
+  for = "/surfaces/*.json"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/lemmas/*.json"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Browse indexes update less often but still change with new corpus —
+# short cache, can re-fetch.
+[[headers]]
+  for = "/index/*.json"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

@@ -1,0 +1,19 @@
+# Built page output — committed selectively after PoC validation, see
+# WORDS_PROJECT_PLAN.md. Uncomment to ignore the full datasets during
+# local dev iteration.
+#
+# surfaces/
+# lemmas/
+# index/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
