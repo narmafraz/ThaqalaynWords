@@ -1,1 +1,1 @@
-{"surface":"ظَنُّكُمْ","slug":"ظَنُّكُمْ","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:4:102:2"],"morphology":{"lex":"ظَنّ","lemma_slug":"ظَنّ","root":"ظ.ن.ن","pos":"N","pos_camel":"noun","clitics":{"enc0":"2mp_poss"}},"lemma_link":"/words/lemmas/ظَنّ"}
+{"surface":"ظَنُّكُمْ","slug":"ظَنُّكُمْ","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:4:102:2"],"morphology":{"lemma_slug":"ظَنَّ","root":"ظ.ن.ن","pos":"V","pos_camel":"verb","clitics":{"enc0":"2mp_dobj"}},"lemma_link":"/words/lemmas/ظَنَّ"}

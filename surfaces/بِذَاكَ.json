@@ -1,1 +1,1 @@
-{"surface":"بِذَاكَ","slug":"بِذَاكَ","occurrence_count":6,"occurrence_paths":["/books/al-kafi:1:4:119:3","/books/al-kafi:1:4:40:1"],"morphology":{"lex":"بَذّ","lemma_slug":"بَذَّ","root":"ب.ذ.ذ","pos":"V","pos_camel":"verb","clitics":{"enc0":"2fs_dobj"}},"lemma_link":"/words/lemmas/بَذَّ"}
+{"surface":"بِذَاكَ","slug":"بِذَاكَ","occurrence_count":6,"occurrence_paths":["/books/al-kafi:1:4:119:3","/books/al-kafi:1:4:40:1"],"morphology":{"lemma_slug":"ذاكَ","root":"ذ.#","pos":null,"pos_camel":"pron_dem","clitics":{"prc1":"bi_prep"}},"lemma_link":"/words/lemmas/ذاكَ"}

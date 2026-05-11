@@ -1,1 +1,1 @@
-{"surface":"لَنُورُ","slug":"لَنُورُ","occurrence_count":2,"occurrence_paths":["/books/al-kafi:1:4:13:1","/books/al-kafi:1:4:13:4"],"morphology":{"lex":"نَوَّر","lemma_slug":"نَوَّرَ","root":"ن.#.ر","pos":"V","pos_camel":"verb","clitics":{"prc1":"la_rc"}},"lemma_link":"/words/lemmas/نَوَّرَ"}
+{"surface":"لَنُورُ","slug":"لَنُورُ","occurrence_count":2,"occurrence_paths":["/books/al-kafi:1:4:13:1","/books/al-kafi:1:4:13:4"],"morphology":{"lemma_slug":"نُور","root":"ن.#.ر","pos":"N","pos_camel":"noun_prop","clitics":{"prc1":"la_emph"}},"lemma_link":"/words/lemmas/نُور"}

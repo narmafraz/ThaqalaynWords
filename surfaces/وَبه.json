@@ -1,1 +1,1 @@
-{"surface":"وَبه","slug":"وَبه","occurrence_count":2,"occurrence_paths":["/books/al-amali-mufid:31:3:1","/books/al-amali-saduq:35:1"],"morphology":{"lex":"وَبَه","lemma_slug":"وَبِهَ","root":"#.ب.ه","pos":"V","pos_camel":"verb","clitics":{}},"lemma_link":"/words/lemmas/وَبِهَ"}
+{"surface":"وَبه","slug":"وَبه","occurrence_count":2,"occurrence_paths":["/books/al-amali-mufid:31:3:1","/books/al-amali-saduq:35:1"],"morphology":{"lemma_slug":"بِ","root":"ب","pos":"PREP","pos_camel":"prep","clitics":{"prc2":"wa_sub","enc0":"3ms_pron"}},"lemma_link":"/words/lemmas/بِ"}

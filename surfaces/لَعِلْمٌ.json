@@ -1,1 +1,1 @@
-{"surface":"لَعِلْمٌ","slug":"لَعِلْمٌ","occurrence_count":5,"occurrence_paths":["/books/al-kafi:1:4:40:1"],"morphology":{"lex":"عَلِم","lemma_slug":"عَلِمَ","root":"ع.ل.م","pos":"V","pos_camel":"verb","clitics":{"prc1":"la_rc"}},"lemma_link":"/words/lemmas/عَلِمَ"}
+{"surface":"لَعِلْمٌ","slug":"لَعِلْمٌ","occurrence_count":5,"occurrence_paths":["/books/al-kafi:1:4:40:1"],"morphology":{"lemma_slug":"عِلْمٍ","root":"ع.ل.م","pos":"N","pos_camel":"noun","clitics":{"prc1":"la_emph"}},"lemma_link":"/words/lemmas/عِلْمٍ"}

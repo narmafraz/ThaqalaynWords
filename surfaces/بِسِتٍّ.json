@@ -1,1 +1,1 @@
-{"surface":"بِسِتٍّ","slug":"بِسِتٍّ","occurrence_count":2,"occurrence_paths":["/books/al-amali-saduq:21:2","/books/tahdhib-al-ahkam:10:23:10"],"morphology":{"lex":"باس","lemma_slug":"باسَ","root":"ب.#.س","pos":"V","pos_camel":"verb","clitics":{}},"lemma_link":"/words/lemmas/باسَ"}
+{"surface":"بِسِتٍّ","slug":"بِسِتٍّ","occurrence_count":2,"occurrence_paths":["/books/al-amali-saduq:21:2","/books/tahdhib-al-ahkam:10:23:10"],"morphology":{"lemma_slug":"سِتَّةً","root":"س.ت.ت","pos":"ADJ","pos_camel":"adj","clitics":{"prc1":"bi_prep"}},"lemma_link":"/words/lemmas/سِتَّةً"}

@@ -1,1 +1,1 @@
-{"surface":"بِطَشْتٍ","slug":"بِطَشْتٍ","occurrence_count":2,"occurrence_paths":["/books/al-istibsar:1:25:30","/books/al-istibsar:1:25:39"],"morphology":{"lex":"بَطَش","lemma_slug":"بَطَشَ","root":"ب.ط.ش","pos":"V","pos_camel":"verb","clitics":{}},"lemma_link":"/words/lemmas/بَطَشَ"}
+{"surface":"بِطَشْتٍ","slug":"بِطَشْتٍ","occurrence_count":2,"occurrence_paths":["/books/al-istibsar:1:25:30","/books/al-istibsar:1:25:39"],"morphology":{"lemma_slug":"طَشْتٍ","root":"ط.ش.ت","pos":"N","pos_camel":"noun","clitics":{"prc1":"bi_prep"}},"lemma_link":"/words/lemmas/طَشْتٍ"}

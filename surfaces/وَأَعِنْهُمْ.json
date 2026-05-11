@@ -1,1 +1,1 @@
-{"surface":"وَأَعِنْهُمْ","slug":"وَأَعِنْهُمْ","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:4:72:15"],"morphology":{"lex":"أَعان","lemma_slug":"أَعَنَ","root":"ع.#.ن","pos":"V","pos_camel":"verb","clitics":{"prc2":"wa_sub","enc0":"3mp_dobj"}},"lemma_link":"/words/lemmas/أَعَنَ"}
+{"surface":"وَأَعِنْهُمْ","slug":"وَأَعِنْهُمْ","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:4:72:15"],"morphology":{"lemma_slug":"عَنَى","root":"ع.ن.#","pos":"V","pos_camel":"verb","clitics":{"prc2":"wa_conj","enc0":"3mp_dobj"}},"lemma_link":"/words/lemmas/عَنَى"}

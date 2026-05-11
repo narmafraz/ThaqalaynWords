@@ -1,1 +1,1 @@
-{"surface":"قَضَيْتَهُ","slug":"قَضَيْتَهُ","occurrence_count":6,"occurrence_paths":["/books/al-istibsar:1:137:11"],"morphology":{"lex":"قَضِيَّة","lemma_slug":"قَضِيَّةَ","root":"ق.ض.#","pos":"N","pos_camel":"noun","clitics":{"enc0":"3ms_poss"}},"lemma_link":"/words/lemmas/قَضِيَّةَ"}
+{"surface":"قَضَيْتَهُ","slug":"قَضَيْتَهُ","occurrence_count":6,"occurrence_paths":["/books/al-istibsar:1:137:11"],"morphology":{"lemma_slug":"قَضَى","root":"ق.ض.#","pos":"V","pos_camel":"verb","clitics":{"enc0":"3ms_dobj"}},"lemma_link":"/words/lemmas/قَضَى"}

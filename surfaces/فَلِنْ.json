@@ -1,1 +1,1 @@
-{"surface":"فَلِنْ","slug":"فَلِنْ","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:1:1:29"],"morphology":{"lex":"فال","lemma_slug":"فالَ","root":"ف.#.ل","pos":"V","pos_camel":"verb","clitics":{}},"lemma_link":"/words/lemmas/فالَ"}
+{"surface":"فَلِنْ","slug":"فَلِنْ","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:1:1:29"],"morphology":{"lemma_slug":"لَن","root":"ل.ن","pos":null,"pos_camel":"part_neg","clitics":{"prc2":"fa_conj"}},"lemma_link":"/words/lemmas/لَن"}

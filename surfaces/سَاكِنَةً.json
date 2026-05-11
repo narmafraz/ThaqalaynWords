@@ -1,1 +1,1 @@
-{"surface":"سَاكِنَةً","slug":"سَاكِنَةً","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:4:66:6"],"morphology":{"lex":"ساكِن","lemma_slug":"ساكِنٍ","root":"س.ك.ن","pos":"ADJ","pos_camel":"adj","clitics":{}},"lemma_link":"/words/lemmas/ساكِنٍ"}
+{"surface":"سَاكِنَةً","slug":"سَاكِنَةً","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:4:66:6"],"morphology":{"lemma_slug":"كانَ","root":"ك.#.ن","pos":"V","pos_camel":"verb","clitics":{"prc1":"sa_fut","enc0":"3ms_dobj"}},"lemma_link":"/words/lemmas/كانَ"}

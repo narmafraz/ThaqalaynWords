@@ -1,1 +1,1 @@
-{"surface":"عَضَّهُ","slug":"عَضَّهُ","occurrence_count":2,"occurrence_paths":["/books/al-kafi:7:4:4:3","/books/tahdhib-al-ahkam:10:11:6"],"morphology":{"lex":"عَضّ","lemma_slug":"عَضّ","root":"ع.ض.ض","pos":"N","pos_camel":"noun","clitics":{"enc0":"3ms_poss"}},"lemma_link":"/words/lemmas/عَضّ"}
+{"surface":"عَضَّهُ","slug":"عَضَّهُ","occurrence_count":2,"occurrence_paths":["/books/al-kafi:7:4:4:3","/books/tahdhib-al-ahkam:10:11:6"],"morphology":{"lemma_slug":"عَضَّ","root":"ع.ض.ض","pos":"V","pos_camel":"verb","clitics":{"enc0":"3ms_dobj"}},"lemma_link":"/words/lemmas/عَضَّ"}

@@ -1,1 +1,1 @@
-{"surface":"وَدَّعْتُكُمْ","slug":"وَدَّعْتُكُمْ","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:4:66:6"],"morphology":{"lex":"وَدَّع","lemma_slug":"وَدَّعَ","root":"#.د.ع","pos":"V","pos_camel":"verb","clitics":{"enc0":"2mp_dobj"}},"lemma_link":"/words/lemmas/وَدَّعَ"}
+{"surface":"وَدَّعْتُكُمْ","slug":"وَدَّعْتُكُمْ","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:4:66:6"],"morphology":{"lemma_slug":"دَعا","root":"د.ع.#","pos":"V","pos_camel":"verb","clitics":{"prc2":"wa_sub","enc0":"2mp_dobj"}},"lemma_link":"/words/lemmas/دَعا"}

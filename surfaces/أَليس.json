@@ -1,1 +1,1 @@
-{"surface":"أَليس","slug":"أَليس","occurrence_count":2,"occurrence_paths":["/books/al-amali-mufid:18:6:1","/books/al-amali-saduq:37:1"],"morphology":{"lex":"أَلْيَس","lemma_slug":"لِيس","root":"ل.#.س","pos":"N","pos_camel":"noun","clitics":{}},"lemma_link":"/words/lemmas/لِيس"}
+{"surface":"أَليس","slug":"أَليس","occurrence_count":2,"occurrence_paths":["/books/al-amali-mufid:18:6:1","/books/al-amali-saduq:37:1"],"morphology":{"lemma_slug":"لَسْنَ","root":"ل.#.س","pos":"V","pos_camel":"verb","clitics":{"prc3":">a_ques"}},"lemma_link":"/words/lemmas/لَسْنَ"}

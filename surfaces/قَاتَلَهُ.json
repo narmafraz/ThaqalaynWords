@@ -1,1 +1,1 @@
-{"surface":"قَاتَلَهُ","slug":"قَاتَلَهُ","occurrence_count":2,"occurrence_paths":["/books/al-amali-saduq:28:8","/books/al-kafi:1:3:11:7"],"morphology":{"lex":"قاتِل","lemma_slug":"قاتِلٍ","root":"ق.ت.ل","pos":"ADJ","pos_camel":"adj","clitics":{}},"lemma_link":"/words/lemmas/قاتِلٍ"}
+{"surface":"قَاتَلَهُ","slug":"قَاتَلَهُ","occurrence_count":2,"occurrence_paths":["/books/al-amali-saduq:28:8","/books/al-kafi:1:3:11:7"],"morphology":{"lemma_slug":"قاتَلَ","root":"ق.ت.ل","pos":"V","pos_camel":"verb","clitics":{"enc0":"3ms_dobj"}},"lemma_link":"/words/lemmas/قاتَلَ"}

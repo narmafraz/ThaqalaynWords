@@ -1,1 +1,1 @@
-{"surface":"فَلَقِيَهَا","slug":"فَلَقِيَهَا","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:4:130:5"],"morphology":{"lex":"فَلْق","lemma_slug":"فَلْق","root":"ف.ل.ق","pos":"N","pos_camel":"noun","clitics":{"enc0":"3fs_poss"}},"lemma_link":"/words/lemmas/فَلْق"}
+{"surface":"فَلَقِيَهَا","slug":"فَلَقِيَهَا","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:4:130:5"],"morphology":{"lemma_slug":"لَقِيَ","root":"ل.ق.#","pos":"V","pos_camel":"verb","clitics":{"prc2":"fa_conj","enc0":"3fs_dobj"}},"lemma_link":"/words/lemmas/لَقِيَ"}

@@ -1,1 +1,1 @@
-{"surface":"لَبِثْنَا","slug":"لَبِثْنَا","occurrence_count":2,"occurrence_paths":["/books/al-kafi:1:4:71:5","/books/al-kafi:1:4:90:6"],"morphology":{"lex":"لَبِث","lemma_slug":"لَبِثَ","root":"ل.ب.ث","pos":"V","pos_camel":"verb","clitics":{}},"lemma_link":"/words/lemmas/لَبِثَ"}
+{"surface":"لَبِثْنَا","slug":"لَبِثْنَا","occurrence_count":2,"occurrence_paths":["/books/al-kafi:1:4:71:5","/books/al-kafi:1:4:90:6"],"morphology":{"lemma_slug":"بَثَّ","root":"ب.ث.ث","pos":"V","pos_camel":"verb","clitics":{"prc1":"la_rc","enc0":"1p_dobj"}},"lemma_link":"/words/lemmas/بَثَّ"}

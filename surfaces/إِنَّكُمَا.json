@@ -1,1 +1,1 @@
-{"surface":"إِنَّكُمَا","slug":"إِنَّكُمَا","occurrence_count":2,"occurrence_paths":["/books/al-kafi:1:4:81:1","/books/al-kafi:5:1:5:1"],"morphology":{"lex":"آن","lemma_slug":"آن","root":"#.#.ن","pos":"N","pos_camel":"noun","clitics":{"enc0":"2d_poss"}},"lemma_link":"/words/lemmas/آن"}
+{"surface":"إِنَّكُمَا","slug":"إِنَّكُمَا","occurrence_count":2,"occurrence_paths":["/books/al-kafi:1:4:81:1","/books/al-kafi:5:1:5:1"],"morphology":{"lemma_slug":"أَنَّ","root":"#.ن.ن","pos":null,"pos_camel":"conj_sub","clitics":{"enc0":"2d_pron"}},"lemma_link":"/words/lemmas/أَنَّ"}

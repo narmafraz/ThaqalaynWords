@@ -1,1 +1,1 @@
-{"surface":"لِسَنَتِهِمْ","slug":"لِسَنَتِهِمْ","occurrence_count":1,"occurrence_paths":["/books/al-kafi:4:1:7:2"],"morphology":{"lex":"لَسَّن","lemma_slug":"لَسَّنَ","root":"ل.س.ن","pos":"V","pos_camel":"verb","clitics":{"enc0":"3mp_dobj"}},"lemma_link":"/words/lemmas/لَسَّنَ"}
+{"surface":"لِسَنَتِهِمْ","slug":"لِسَنَتِهِمْ","occurrence_count":1,"occurrence_paths":["/books/al-kafi:4:1:7:2"],"morphology":{"lemma_slug":"سِنِي","root":"س.ن.#","pos":"N","pos_camel":"noun","clitics":{"prc1":"la_emph","enc0":"3mp_poss"}},"lemma_link":"/words/lemmas/سِنِي"}

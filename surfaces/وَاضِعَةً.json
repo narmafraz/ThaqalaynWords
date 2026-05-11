@@ -1,1 +1,1 @@
-{"surface":"وَاضِعَةً","slug":"وَاضِعَةً","occurrence_count":1,"occurrence_paths":["/books/al-kafi:4:3:7:9"],"morphology":{"lex":"واضِع","lemma_slug":"واضِعٍ","root":"#.ض.ع","pos":"N","pos_camel":"noun","clitics":{}},"lemma_link":"/words/lemmas/واضِعٍ"}
+{"surface":"وَاضِعَةً","slug":"وَاضِعَةً","occurrence_count":1,"occurrence_paths":["/books/al-kafi:4:3:7:9"],"morphology":{"lemma_slug":"وُضِعَ","root":"#.ض.ع","pos":"V","pos_camel":"verb","clitics":{"prc2":"wa_conj","enc0":"3ms_dobj"}},"lemma_link":"/words/lemmas/وُضِعَ"}

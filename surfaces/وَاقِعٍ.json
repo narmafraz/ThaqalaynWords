@@ -1,1 +1,1 @@
-{"surface":"وَاقِعٍ","slug":"وَاقِعٍ","occurrence_count":2,"occurrence_paths":["/books/al-kafi:1:4:108:47","/books/al-kafi:8:1:8:2"],"morphology":{"lex":"واقِع","lemma_slug":"واقِعٍ","root":"#.ق.ع","pos":"N","pos_camel":"noun","clitics":{}},"lemma_link":"/words/lemmas/واقِعٍ"}
+{"surface":"وَاقِعٍ","slug":"وَاقِعٍ","occurrence_count":2,"occurrence_paths":["/books/al-kafi:1:4:108:47","/books/al-kafi:8:1:8:2"],"morphology":{"lemma_slug":"وَقَعَ","root":"#.ق.ع","pos":"V","pos_camel":"verb","clitics":{"prc2":"wa_conj"}},"lemma_link":"/words/lemmas/وَقَعَ"}

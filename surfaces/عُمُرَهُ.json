@@ -1,1 +1,1 @@
-{"surface":"عُمُرَهُ","slug":"عُمُرَهُ","occurrence_count":2,"occurrence_paths":["/books/al-kafi:1:4:85:5","/books/al-kafi:7:5:1:1"],"morphology":{"lex":"عَمَّر","lemma_slug":"عَمَّرَ","root":"ع.م.ر","pos":"V","pos_camel":"verb","clitics":{"enc0":"3ms_dobj"}},"lemma_link":"/words/lemmas/عَمَّرَ"}
+{"surface":"عُمُرَهُ","slug":"عُمُرَهُ","occurrence_count":2,"occurrence_paths":["/books/al-kafi:1:4:85:5","/books/al-kafi:7:5:1:1"],"morphology":{"lemma_slug":"عُمْرٍ","root":"ع.م.ر","pos":"N","pos_camel":"noun","clitics":{"enc0":"3ms_poss"}},"lemma_link":"/words/lemmas/عُمْرٍ"}

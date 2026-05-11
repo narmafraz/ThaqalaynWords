@@ -1,1 +1,1 @@
-{"surface":"لِأُعْطِيَهُ","slug":"لِأُعْطِيَهُ","occurrence_count":1,"occurrence_paths":["/books/al-amali-saduq:70:11"],"morphology":{"lex":"عَطاء","lemma_slug":"أَعْطِياتٌ","root":"ع.ط.#","pos":"N","pos_camel":"noun","clitics":{"prc1":"la_emph"}},"lemma_link":"/words/lemmas/أَعْطِياتٌ"}
+{"surface":"لِأُعْطِيَهُ","slug":"لِأُعْطِيَهُ","occurrence_count":1,"occurrence_paths":["/books/al-amali-saduq:70:11"],"morphology":{"lemma_slug":"أَعْطَى","root":"ع.ط.#","pos":"V","pos_camel":"verb","clitics":{"prc1":"li_prep","enc0":"3ms_dobj"}},"lemma_link":"/words/lemmas/أَعْطَى"}

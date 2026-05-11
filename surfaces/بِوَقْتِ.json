@@ -1,1 +1,1 @@
-{"surface":"بِوَقْتِ","slug":"بِوَقْتِ","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:4:124:24"],"morphology":{"lex":"بَوَّق","lemma_slug":"بَوَّقَ","root":"ب.#.ق","pos":"V","pos_camel":"verb","clitics":{}},"lemma_link":"/words/lemmas/بَوَّقَ"}
+{"surface":"بِوَقْتِ","slug":"بِوَقْتِ","occurrence_count":1,"occurrence_paths":["/books/al-kafi:1:4:124:24"],"morphology":{"lemma_slug":"وَقْتٍ","root":"#.ق.ت","pos":"N","pos_camel":"noun","clitics":{"prc1":"bi_prep"}},"lemma_link":"/words/lemmas/وَقْتٍ"}
