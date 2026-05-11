@@ -117,8 +117,18 @@ collapse to the same lemma via the paradigm.
     "lanes": {"found": true, "entry_ids": ["n42874", "n42933"]}
   },
   "translations": null,
-  "definition": null,
-  "etymology": null
+  "definition": {
+    "source": "wiktextract",
+    "senses": [
+      {"pos": "verb", "gloss": "to say", "examples": [
+        {"text": "قَالَ", "english": "He said"}
+      ]},
+      {"pos": "verb", "gloss": "to tell"},
+      "..."
+    ]
+  },
+  "etymology": null,
+  "ipa": ["/qaː.la/", "/ɡaːl/"]
 }
 ```
 
@@ -144,9 +154,10 @@ collapse to the same lemma via the paradigm.
 | `cross_references.qac` | Lookup in the Quranic Arabic Corpus v0.4. `found`, `lemma_key` (the QAC's spelling), `root`, `pos`, and `occurrence_count` (how often the lemma appears in the Quran). |
 | `cross_references.wiktextract` | Lookup in Wiktionary's Arabic dump. `found`, `entry_count`, `pos_tags` (Wiktionary's POS labels), `has_etymology`, `sense_count` (number of distinct definitions). |
 | `cross_references.lanes` | Lookup in Lane's Arabic-English Lexicon. `found`, `entry_ids` (Perseus `n` IDs that can be deep-linked to the full lexicon entry). |
-| `translations` | **Null for now.** Will hold the 11-language LLM-generated translations once Phase D runs. |
-| `definition` | **Null for now.** Will hold a corpus-context-aware English definition prose paragraph. |
-| `etymology` | **Null for now.** Will hold etymology + Semitic cognates summary. |
+| `translations` | **Null for now.** Wiktionary's Arabic-side entries don't carry foreign-language translations; the LLM phase will fill the 10 non-English target languages. |
+| `definition` | Populated from Wiktextract when the lemma has a Wiktionary entry (~76% of lemmas). Shape: `{source: "wiktextract", senses: [{pos, gloss, tags?, examples?}, ...]}`. `gloss` is the English definition string; `examples` are capped at 2 per sense; `pos` distinguishes verb/noun senses when the same headword has both. **Null** when no Wiktionary entry — those go to the LLM augmentation pass. |
+| `etymology` | Populated from Wiktextract `etymology_text` when present (~50% of Wikt-attested lemmas have etymology). Shape: `{source: "wiktextract", text: "..."}`. Multi-paragraph when different POS entries carry different etymologies. **Null** otherwise. |
+| `ipa` | IPA pronunciation strings from Wiktextract `sounds[].ipa`, deduplicated. Multiple entries reflect dialect variation (Egyptian /ɡaːl/, MSA /qaːla/, etc.). **Null** when Wiktionary has no pronunciation data. |
 
 `root` uses CAMeL Tools' notation, with `#` standing in for hollow / weak
 radicals (`ق.#.ل` = root ق-و-ل for the verb "to say"). UI should map this
