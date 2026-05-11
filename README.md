@@ -2,9 +2,24 @@
 
 Per-word Arabic dictionary for the Thaqalayn hadith corpus. Each surface
 form in the corpus has a JSON page; each lemma it maps to has a richer
-lemma page with cross-references to classical Arabic lexicons.
+lemma page with cross-references to classical Arabic lexicons; each
+shared root collects its sibling lemmas.
 
-See **`Thaqalayn/docs/WORDS_PROJECT_PLAN.md`** for the master plan.
+**Live API:** <https://thaqalaynwords.netlify.app/>
+
+Example endpoints:
+- `/index/roots.json` — all 2,769 roots sorted by total corpus frequency
+- `/index/lemmas.json` — all 13K lemmas with cross-reference flags
+- `/index/surfaces.json` — all 102K unique diacritized surfaces
+- `/lemmas/{slug}.json` — full lemma page (paradigm, root_link, definition, etymology, IPA, cross-refs)
+- `/roots/{slug}.json` — root page with sibling lemma list
+- `/surfaces/{slug}.json` — surface page with occurrence paths + lemma_link
+
+All Arabic in URLs is percent-encoded UTF-8. Root slugs use `_` for
+weak/hollow radicals (`ق-_-ل` for ق-و-ل).
+
+See **`Thaqalayn/docs/WORDS_PROJECT_PLAN.md`** for the master plan and
+the next-steps roadmap.
 
 ## Directory layout
 
