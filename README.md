@@ -174,6 +174,7 @@ collapse to the same lemma via the paradigm.
 | `etymology` | Populated from Wiktextract `etymology_text` when present (~50% of Wikt-attested lemmas have etymology). Shape: `{source: "wiktextract", text: "..."}`. Multi-paragraph when different POS entries carry different etymologies. **Null** otherwise. |
 | `ipa` | IPA pronunciation strings from Wiktextract `sounds[].ipa`, deduplicated. Multiple entries reflect dialect variation (Egyptian /ɡaːl/, MSA /qaːla/, etc.). **Null** when Wiktionary has no pronunciation data. |
 | `lanes_definition` | Populated from Lane's Arabic-English Lexicon (Perseus TEI XML) when the lemma matches at least one Lane's entry (~67% of lemmas). Shape: `{source: "lanes", entries: [{entry_id, headword_ar, root, body, source_refs}, ...]}`. Multiple entries reflect homographs (e.g. قالَ "to say" + قالَ "to nap" are separate Lane's entries). `body` is an **uncapped** ordered list of typed segments (see "Lane's body segments" below); `source_refs` are the abbreviations Lane's used to cite his sources (see "Lane's source-citation legend" below). **Null** when the lemma has no Lane's entry. |
+| `classical_definitions` | Populated from hawramani.com which aggregates entries from **38 classical Arabic lexicons** per Arabic word (al-Mufradat of al-Raghib, Lisan al-Arab, Taj al-'Arus, Sihah, Asas al-Balagha, Misbah al-Munir, Qamus, Mughrib, Mufradat (Farahi), and more). Shape: `{source: "hawramani", url, headword_ar, entries: [{lexicon_id, lexicon_en, lexicon_ar, permalink, body_html}, ...]}`. The `body_html` is **sanitized HTML** (allowlist: p/b/i/em/u/span/div/a/ul/ol/li/br/sup/sub — script/style/iframe/event-handlers stripped) safe to render with `[innerHTML]`. The `permalink` field is a deep link to the specific entry on hawramani; `url` is the lemma's hawramani page. `lexicon_id` is a stable code (`dictionary_31` = al-Mufradat, `dictionary_1` = Lisan al-Arab, etc.) — see "hawramani lexicon legend" below for the full mapping. **Null** when no hawramani entry exists for the lemma (after diacritic-strip URL slug lookup). |
 
 `root` uses CAMeL Tools' notation, with `#` standing in for hollow / weak
 radicals (`ق.#.ل` = root ق-و-ل for the verb "to say"). UI should map this
@@ -387,6 +388,59 @@ Here are the most-common codes and what they reference:
 (The full legend is in
 `ThaqalaynDataGenerator/app/words/lanes.py` as
 `SOURCE_CITATION_LEGEND`; the UI can import it for display.)
+
+## hawramani lexicon legend
+
+When `classical_definitions.entries[]` is populated, each entry carries
+a `lexicon_id` like `dictionary_31`. The full mapping of these IDs to
+the underlying classical Arabic lexicons:
+
+| `lexicon_id` | English | Arabic |
+|---|---|---|
+| `dictionary_1` | Ibn Manẓūr, *Lisān al-ʿArab* (d. 1311 CE) | لسان العرب لابن منظور |
+| `dictionary_3` | al-Khalīl b. Aḥmad al-Farāhīdī, *Kitāb al-ʿAin* (d. c. 786 CE) | كتاب العين |
+| `dictionary_4` | Abū ʿUbayd, *Gharīb al-Ḥadīth* | غريب الحديث لأبي عبيد |
+| `dictionary_5` | Ghulām Thaʿlab, *al-ʿAsharāt fī Gharīb al-Lugha* | العشرات في غريب اللغة |
+| `dictionary_6` | al-Jawharī, *Tāj al-Lugha wa Ṣiḥāḥ al-ʿArabiyya* (Sihah) | الصحاح للجوهري |
+| `dictionary_7` | Ibn Fāris, *Maqāyīs al-Lugha* (d. 1004 CE) | مقاييس اللغة |
+| `dictionary_8` | Ibn Sīda, *al-Muḥkam wa-l-Muḥīṭ al-Aʿẓam* | المحكم |
+| `dictionary_9` | al-Zamakhsharī, *Asās al-Balāgha* (d. 1143 CE) | أساس البلاغة |
+| `dictionary_10` | Abū Mūsā al-Madīnī, *al-Majmūʿ al-Mughīth* | المجموع المغيث |
+| `dictionary_11` | Ibn al-Athīr, *al-Nihāya fī Gharīb al-Ḥadīth* | النهاية في غريب الحديث |
+| `dictionary_12` | al-Muṭarrizī, *al-Mughrib fī Tartīb al-Muʿrib* | المغرب |
+| `dictionary_13` | al-Ṣaghānī, *al-Shawārid* | الشوارد |
+| `dictionary_14` | al-Razī, *Mukhtār al-Ṣiḥāḥ* | مختار الصحاح |
+| `dictionary_15` | Ibn Mālik, *al-Alfāẓ al-Mukhtalifa* | الألفاظ المختلفة |
+| `dictionary_16` | Abu Ḥayyān al-Gharnāṭī, *Tuḥfat al-Arīb* | تحفة الأريب |
+| `dictionary_17` | al-Fayyūmī, *al-Miṣbāḥ al-Munīr* | المصباح المنير |
+| `dictionary_18` | al-Sharīf al-Jurjānī, *Kitāb al-Taʿrīfāt* | كتاب التعريفات |
+| `dictionary_19` | Firuzabadi, *al-Qāmūs al-Muḥīṭ* (Kamoos) | القاموس المحيط |
+| `dictionary_20` | al-Suyūṭī, *Muʿjam Maqālīd al-ʿUlūm* | معجم مقاليد العلوم |
+| `dictionary_21` | al-Fattinī, *Majmaʿ Biḥār al-Anwār* | مجمع بحار الأنوار |
+| `dictionary_22` | al-Munāwī, *al-Tawqīf ʿalā Muhimmāt al-Taʿārīf* | التوقيف على مهمات التعاريف |
+| `dictionary_23` | Aḥmadnagarī, *Dastūr al-ʿUlamāʾ* | دستور العلماء |
+| `dictionary_24` | al-Tahānawī, *Kashshāf Iṣṭilāḥāt al-Funūn* | كشاف اصطلاحات الفنون |
+| `dictionary_25` | Murtaḍa al-Zabīdī, *Tāj al-ʿArūs* | تاج العروس |
+| `dictionary_27` | al-Barakatī, *al-Taʿrīfāt al-Fiqhīya* | التعريفات الفقهية |
+| `dictionary_29` | Ibn al-Tustarī, *al-Mudhakkar wa-l-Muʾannath* | المذكر والمؤنث |
+| `dictionary_31` | **al-Rāghib al-Isfahānī, *al-Mufradāt fī Gharīb al-Qurʾān*** | المفردات للراغب الأصفهاني |
+| `dictionary_32` | Reinhart Dozy, *Supplément aux dictionnaires arabes* | تكملة المعاجم |
+| `dictionary_36` | al-Ṣāḥib bin ʿAbbād, *al-Muḥīṭ fī l-Lugha* | المحيط في اللغة |
+| `dictionary_37` | al-Ṣaghānī, *al-ʿUbāb al-Dhākhir wa-l-Lubāb al-Fākhir* | العباب الزاخر |
+| `dictionary_38` | Hamiduddin Farahi, *Mufradāt al-Qurʾān* (d. 1930 CE) | مفردات القرآن للفراهي |
+| `dictionary_39` | ʿAbdullāh ibn ʿAbbās, *Gharīb al-Qurʾān fī Shiʿr al-ʿArab* | غريب القرآن لابن عباس |
+| `dictionary_40` | al-Suyūṭī, *al-Muhadhdhib fīmā Waqaʿa fi l-Qurʾān min al-Muʿarrab* | المهذب للسيوطي |
+| `dictionary_46` | Dictionary of Arabic Baby Names (2009) | |
+| `dictionary_48` | Sultan Qaboos Encyclopedia of Arab Names | موسوعة السلطان قابوس |
+| `dictionary_49` | Edward William Lane, *Arabic-English Lexicon* (note: same Lane's as `lanes_definition` above; included here for cross-checking) | معجم لين |
+| `dictionary_51` | Habib Anthony Salmone, *An Advanced Learner's Arabic-English Dictionary* | قاموس سالمون |
+| `dictionary_52` | Yāqūt al-Ḥamawī, *Muʿjam al-Buldān* | معجم البلدان |
+
+The full programmatic mapping is in
+`ThaqalaynDataGenerator/app/words/hawramani.py` as
+`LEXICON_LEGEND`. New `dictionary_N` IDs will appear in output even
+if not yet in the legend — the legend is purely a display
+convenience.
 
 ## License & attribution
 
