@@ -168,11 +168,12 @@ collapse to the same lemma via the paradigm.
 | `frequency_in_corpus` | Sum of every paradigm form's `count` (where `in_corpus` is true). Equals total corpus occurrences of this lemma across all its inflections. |
 | `cross_references.qac` | Lookup in the Quranic Arabic Corpus v0.4. `found`, `lemma_key` (the QAC's spelling), `root`, `pos`, and `occurrence_count` (how often the lemma appears in the Quran). |
 | `cross_references.wiktextract` | Lookup in Wiktionary's Arabic dump. `found`, `entry_count`, `pos_tags` (Wiktionary's POS labels), `has_etymology`, `sense_count` (number of distinct definitions). |
-| `cross_references.lanes` | Lookup in Lane's Arabic-English Lexicon. `found`, `entry_ids` (Perseus `n` IDs that can be deep-linked to the full lexicon entry). |
+| `cross_references.lanes` | Lookup in Lane's Arabic-English Lexicon. `found`, `entry_ids` (Perseus entry IDs), `search_url` (link to a lanelexicon.com WordPress search for this lemma — no stable per-entry deep linking is available on any Lane's viewer). |
 | `translations` | **Null for now.** Wiktionary's Arabic-side entries don't carry foreign-language translations; the LLM phase will fill the 10 non-English target languages. |
 | `definition` | Populated from Wiktextract when the lemma has a Wiktionary entry (~76% of lemmas). Shape: `{source: "wiktextract", senses: [{pos, gloss, tags?, examples?}, ...]}`. `gloss` is the English definition string; `examples` are capped at 2 per sense; `pos` distinguishes verb/noun senses when the same headword has both. **Null** when no Wiktionary entry — those go to the LLM augmentation pass. |
 | `etymology` | Populated from Wiktextract `etymology_text` when present (~50% of Wikt-attested lemmas have etymology). Shape: `{source: "wiktextract", text: "..."}`. Multi-paragraph when different POS entries carry different etymologies. **Null** otherwise. |
 | `ipa` | IPA pronunciation strings from Wiktextract `sounds[].ipa`, deduplicated. Multiple entries reflect dialect variation (Egyptian /ɡaːl/, MSA /qaːla/, etc.). **Null** when Wiktionary has no pronunciation data. |
+| `lanes_definition` | Populated from Lane's Arabic-English Lexicon (Perseus TEI XML) when the lemma matches at least one Lane's entry (~67% of lemmas). Shape: `{source: "lanes", entries: [{entry_id, headword_ar, root, body, source_refs}, ...]}`. Multiple entries reflect homographs (e.g. قالَ "to say" + قالَ "to nap" are separate Lane's entries). `body` is an **uncapped** ordered list of typed segments (see "Lane's body segments" below); `source_refs` are the abbreviations Lane's used to cite his sources (see "Lane's source-citation legend" below). **Null** when the lemma has no Lane's entry. |
 
 `root` uses CAMeL Tools' notation, with `#` standing in for hollow / weak
 radicals (`ق.#.ل` = root ق-و-ل for the verb "to say"). UI should map this
@@ -329,6 +330,63 @@ python scripts/validate_word_pages.py --strict
 
 The build is deterministic — no LLM calls. Source data comes from
 `ThaqalaynWordSources/`.
+
+## Lane's body segments
+
+When `lanes_definition` is populated, each entry's `body` is an ordered
+list of typed segments (no truncation — full content from Lane's TEI XML
+is preserved). The UI walks them in order and renders by `kind`:
+
+| `kind` | Shape | Render guidance |
+|---|---|---|
+| `italic_en` | `{kind: "italic_en", text: "..."}` | English definition / commentary. Display in italics. The semantic body of Lane's entries — i.e., the actual definitions. |
+| `arabic` | `{kind: "arabic", text_ar: "...", text_bw: "...", orth_type?: "plain"\|"arrow"}` | Embedded Arabic word (e.g., a derived form or cross-reference). `text_ar` is the NFC Arabic; `text_bw` is the original Buckwalter. `orth_type: "arrow"` means Lane used an ↓ marker preceding the form (he uses this for alternative orthographic forms — the UI can render it with a `↓` prefix or different styling). |
+| `text` | `{kind: "text", text: "..."}` | Connective prose between elements, including parenthesized source-citation strings like `(S, K,) or` and `(M:)`. Display as normal text. |
+| `quote` | `{kind: "quote", text: "..."}` | Occasional `<quote>` blocks (rare). Display as a quote. |
+| `page_break` | `{kind: "page_break", n: 42}` | Marks a printed-page boundary in Lane's 1863 edition. Useful for citations like "see Lane Vol. 3, p. 42". Render inline as a faint page-number marker, or omit visually. |
+
+## Lane's source-citation legend
+
+Throughout the body of each Lane's entry, citations appear in parentheses
+like `(S, K, TA:)` or `(Msb:)`. The `source_refs` array on each entry
+collects every code mentioned, deduplicated, in order of first appearance.
+Here are the most-common codes and what they reference:
+
+| Code | Reference |
+|---|---|
+| `S` | Sihah — al-Jawhari, *al-Sihah* |
+| `K` | Kamoos — al-Firuzabadi, *al-Qamus al-Muhit* |
+| `M` | Muhkam — Ibn Sida, *al-Muhkam* |
+| `TA` | Taj al-'Arus — al-Zabidi (commentary on Kamoos) |
+| `T` | Tahdhib — al-Azhari, *Tahdhib al-Lughah* |
+| `L` | Lisan al-'Arab — Ibn Manzur |
+| `A` | Asas al-Balaghah — al-Zamakhshari |
+| `O` | Ubab — al-Saghani, *al-'Ubab al-Zakhir* |
+| `Msb` | Misbah al-Munir — al-Fayyumi |
+| `Mgh` | Mughrib — al-Mutarrizi, *al-Mughrib fi Tartib al-Mu'rib* |
+| `MA` | Mukhassas — Ibn Sida |
+| `JK` | Jamharah — Ibn Durayd, *Jamharat al-Lughah* |
+| `IF` | Mu'jam Maqayis al-Lughah — Ibn Faris |
+| `Nh` | Nihayah — Ibn al-Athir, *al-Nihayah fi Gharib al-Hadith* |
+| `AHn` | Abu Hanifah al-Dinawari |
+| `IB` | Ibn Barri |
+| `IAar` | Ibn al-A'rabi |
+| `IDrd` | Ibn Durayd |
+| `ISd` | Ibn al-Sikkit (or Ibn al-Sayyid) |
+| `IJ` | Ibn Jinni |
+| `IAth` | Ibn al-Athir |
+| `Az` | al-Azhari |
+| `Fr` | al-Farra' |
+| `Akh` | al-Akhfash |
+| `Sb` | Sibawayh |
+| `Ks` | al-Kisa'i |
+| `Lh` | Abu al-Hasan al-Lihyani |
+| `AZ` | Abu Zayd |
+| `AO` | Abu 'Ubayd |
+
+(The full legend is in
+`ThaqalaynDataGenerator/app/words/lanes.py` as
+`SOURCE_CITATION_LEGEND`; the UI can import it for display.)
 
 ## License & attribution
 
