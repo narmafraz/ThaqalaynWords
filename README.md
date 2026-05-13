@@ -216,6 +216,19 @@ lemmas. The root page lists all lemmas in our corpus derived from it.
 | `total_frequency` | Sum of all lemma corpus frequencies under this root. |
 | `translations` / `definition` / `etymology` | **Null for now.** Reserved for a future LLM pass that will produce a "core meaning of the root" gloss shared across all lemmas (cheaper than per-lemma definitions for the rarer derivations). |
 
+### Index files (`index/surfaces.json`, `index/lemmas.json`, `index/roots.json`)
+
+Each is a `{ total: number, items: ItemEntry[] }` envelope (key is `surfaces`/`lemmas`/`roots`). Sorted by descending frequency so paginated or capped views default to the most-useful entries.
+
+**`index/surfaces.json` entry** — `{ slug, count, lemma, pos }`. `lemma` is null for surfaces CAMeL couldn't analyze (proper nouns, foreign chars).
+
+**`index/lemmas.json` entry** — `{ slug, root, root_slug, pos, gloss, frequency, paradigm_size, in_corpus_forms, has_qac, has_wiktextract, has_lanes }`.
+- **`gloss`** — *Temporary, English-only.* The first Wiktextract sense gloss aligned with the lemma's POS, truncated to 80 chars (ellipsis on overflow). Picked by `_pick_aligned_gloss` in `scripts/build_word_indexes.py` using a POS-family map so homographs return the right sense (e.g. `إِلَى` returns `""` because no preposition sense exists in Wiktextract — better than returning the verb sense "to promise"). Empty string for function-word lemmas without an aligned sense. **This field will be replaced by a multi-language `glosses: {en, ar, fa, ur, …}` object once the Path B LLM-translation step runs.** Consumers should fall back gracefully when it's empty.
+- `has_qac` / `has_wiktextract` / `has_lanes` — boolean availability flags so a UI can pre-filter by source without fetching the lemma page.
+- `paradigm_size` / `in_corpus_forms` — gives a quick "how thoroughly attested" feel before opening the page.
+
+**`index/roots.json` entry** — `{ slug, root, lemma_count, total_frequency }`.
+
 ### Clitic taxonomy
 
 Arabic words frequently combine a stem with affixes (clitics):
