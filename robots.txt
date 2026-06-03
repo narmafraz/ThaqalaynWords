@@ -1,0 +1,11 @@
+# Thaqalayn Words data API — machine-readable per-word JSON files.
+#
+# This host is NOT intended for direct discovery. Readers access this
+# content via the human-readable site at https://thaqalayn.netlify.app/words,
+# where the same content is rendered as HTML and remains indexable per
+# that site's own robots.txt policy. Crawlers walking the surface/lemma/root
+# JSON files here would only consume hosting bandwidth without contributing
+# any SEO value.
+
+User-agent: *
+Disallow: /
