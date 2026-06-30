@@ -9,21 +9,29 @@
     Access-Control-Allow-Methods = "GET, OPTIONS"
     Access-Control-Allow-Headers = "Content-Type"
 
-# Per-word JSON pages — immutable once generated, cache aggressively.
+# Per-word JSON pages are regenerated IN PLACE at stable URLs as the corpus and
+# enrichment evolve (e.g. glosses added to lemma pages), so they are NOT
+# immutable. `immutable` would freeze stale copies in browsers' HTTP disk cache
+# for a year, which a clear-site-data reset does not evict. Use a freshness
+# window instead: trust the local copy for 1 day, then serve it instantly for up
+# to a year while revalidating in the background. Netlify ETags make those
+# conditional GETs that return a tiny 304 (no re-download) unless the file
+# actually changed, so unchanged bytes are essentially never re-downloaded and a
+# returning visitor effectively never waits on a blocking revalidation.
 [[headers]]
   for = "/surfaces/*.json"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=31536000"
 
 [[headers]]
   for = "/lemmas/*.json"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=31536000"
 
 [[headers]]
   for = "/roots/*.json"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=31536000"
 
 # Browse indexes update less often but still change with new corpus —
 # short cache, can re-fetch.
